@@ -55,7 +55,8 @@ if (! defined('LANDSCAPE_SERVICE')) {
 	define('LANDSCAPE_SERVICE', '192.168.0.163:1080');
 }
 
-
+// 微信token
+define('WEIXIN_TOKEN', 'patsnaphackathons1');
 
 // Mysql account/password
 if (! defined ( 'DB_LOGIN' )) {

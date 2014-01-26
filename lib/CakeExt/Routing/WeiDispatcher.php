@@ -46,7 +46,7 @@ class WeiDispatcher extends CakeDispatcher implements InterfaceRequest {
 	
 		// 消息来自微信客户端？改变路由分发
 		if ( isset($_GET['signature']) && isset($_GET['timestamp']) && isset($_GET['nonce']) ) {
-			$weiRequest = new Request('token', $this, false);
+			$weiRequest = new Request(WEIXIN_TOKEN, $this, true);
 			$weiRequest->parse();
 		}
 	}

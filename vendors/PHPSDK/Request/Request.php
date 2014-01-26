@@ -36,23 +36,19 @@ class Request {
 	public function __construct($token, InterfaceRequest $request, $debug = false) {
 		
 		// 验证签名
-// 		if ( !$this->_validateSignature($token) ) {
-// 			exit('Validate signature was failed.');
-// 		}
+		if ( !$this->_validateSignature($token) ) {
+			exit('Validate signature was failed.');
+		}
 		
-// 		// 验证参数是否存在
-// 		if ( !isset($GLOBALS['HTTP_RAW_POST_DATA']) ) {
-// 			exit('No request Data.');
-// 		}
+ 		// 验证参数是否存在
+		if ( !isset($GLOBALS['HTTP_RAW_POST_DATA']) ) {
+			exit('No request Data.');
+		}
 		
 		// 设置错误处理函数，将错误通过文本消息回复显示
 		set_error_handler(array(&$this, 'errorHandler'));
 		
-		//$xmlData = (array)simplexml_load_string($GLOBALS['HTTP_RAW_POST_DATA'], 'SimpleXMLElement', LIBXML_NOCDATA);
-		
-		$xmlData = array(
-			'msgtype' => 'text',
-		);
+		$xmlData = (array)simplexml_load_string($GLOBALS['HTTP_RAW_POST_DATA'], 'SimpleXMLElement', LIBXML_NOCDATA);
 		
 		// 统一转换为小写
 		$this->_inputData = array_change_key_case($xmlData, CASE_LOWER);
