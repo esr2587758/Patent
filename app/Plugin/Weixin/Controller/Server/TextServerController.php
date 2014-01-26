@@ -8,7 +8,6 @@ class TextServerController extends WeixinServerController {
 	public function response() {
 		
 		$requestData = $this->getWeixinRequestData();
-		debug($requestData);
 		
 		$textResponse = new Text(array(
 			'content' => 'TextServer'
