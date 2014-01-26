@@ -31,8 +31,12 @@ abstract class WeixinServerController extends WeixinAppController {
 	 */
 	public function send(AbstractResponse $response) {
 		
-		echo $response->send();
+		$xmlResponse = $response->send();
 		
+		// 记录相应消息
+		CakeLog::write('debug', $xmlResponse);
+		
+		echo $xmlResponse;
 		exit();
 	}
 }

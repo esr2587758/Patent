@@ -61,6 +61,9 @@ class Request {
 		// 统一转换为小写
 		$this->_inputData = array_change_key_case($xmlData, CASE_LOWER);
 		
+		// 记录请求参数
+		CakeLog::write('debug', var_export($this->_inputData, true));
+		
 		$this->_request = $request;
 		
 		$this->_debug   = $debug;
