@@ -13,8 +13,8 @@ class TextServerController extends WeixinServerController {
 		
 		$textResponse = new Text(array(
 			'content' => 'TextServer',
-			'fromUserName' => $this->getWeixinRequestData('fromusername'),
-			'toUserName' => $this->getWeixinRequestData('tousername'),
+			'fromUserName' => $this->getWeixinRequestData('tousername'),
+			'toUserName' => $this->getWeixinRequestData('fromusername'),
 		));
 		
 		$this->send($textResponse);
