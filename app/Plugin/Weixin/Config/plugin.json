@@ -1,0 +1,13 @@
+{
+	"name": "Weixin",
+	"description": "Weixin Plugin",
+
+	"author": "chinkei",
+	"authorEmail": "chenjia@zhihuiya.com",
+
+	"dependencies": {
+		"plugins": [
+			"extensions"
+		]
+	}
+}
