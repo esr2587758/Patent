@@ -1,7 +1,8 @@
 <?php
 namespace PHPSDK\Request;
 
-use PHPSDK\Response\Text;
+use PHPSDK\Response\Text,
+	CakeLog;
 
 class Request {
 	
@@ -35,13 +36,20 @@ class Request {
 	 */
 	public function __construct($token, InterfaceRequest $request, $debug = false) {
 		
+		// 已经入微信路由
+		CakeLog::write('debug', 'Weixin Request was starting.');
+		
 		// 验证签名
 		if ( !$this->_validateSignature($token) ) {
+			// 写日志
+			CakeLog::write('error', 'Validate signature was failed.');
 			exit('Validate signature was failed.');
 		}
 		
  		// 验证参数是否存在
 		if ( !isset($GLOBALS['HTTP_RAW_POST_DATA']) ) {
+			// 写日志
+			CakeLog::write('error', 'No request Data.');
 			exit('No request Data.');
 		}
 		
