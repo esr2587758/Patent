@@ -1,7 +1,6 @@
 <?php
 namespace CakeExt\Routing;
 
-use PHPSDK;
 use Dispatcher as CakeDispatcher,
 	PHPSDK\Request\InterfaceRequest,
 	PHPSDK\Request\Request;
@@ -218,7 +217,6 @@ class WeiDispatcher extends CakeDispatcher implements InterfaceRequest {
 		));
 		
 		$this->addCakeRequest($params, $request->getInput());
-		
 	}
 	
 	/**

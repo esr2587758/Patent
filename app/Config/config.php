@@ -1,4 +1,14 @@
 <?php
+// 微信相关配置 START
+
+define('WEIXIN_TOKEN', 'patsnaphackathons1');
+
+define('WEIXIN_API_ID', 'wx5b13f1f1de611685');
+
+define('WEIXIN_APP_SECRET', '93443c4316457f2fea9b24d19d2567f0');
+
+// 微信相关配置 END
+
 define('SEARCH_TYPE_DEFINE',true);
 //从solr搜索所有专利
 define('SEARCH_ALL',1);
@@ -54,9 +64,6 @@ if (! defined('EXPORT_SERVICE')) {
 if (! defined('LANDSCAPE_SERVICE')) {
 	define('LANDSCAPE_SERVICE', '192.168.0.163:1080');
 }
-
-// 微信token
-define('WEIXIN_TOKEN', 'patsnaphackathons1');
 
 // Mysql account/password
 if (! defined ( 'DB_LOGIN' )) {

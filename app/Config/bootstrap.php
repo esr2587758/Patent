@@ -117,7 +117,7 @@ ClassLoder::register();
 // 注册命名空间
 ClassLoder::namespaces(array('CakeExt' => CORE_PATH.'/CakeExt'));
 ClassLoder::namespaces(array('PHPSDK' => VENDORS.'/PHPSDK'));
-
+ClassLoder::namespaces(array('Curl' => VENDORS.'/Curl'));
 ClassLoder::namespaces(array('Zend' => VENDORS.'/Zend'));
 ClassLoder::namespaces(array('Innosnap' => CORE_PATH.'/Innosnap'));
 ClassLoder::namespaces(array('Plugin' =>  array(
@@ -126,7 +126,7 @@ ClassLoder::namespaces(array('Plugin' =>  array(
 	)
 ));
 
-CakePlugin::loadAll(array('routes'=>true,'bootstrap'=>true));
+CakePlugin::loadAll(array('routes'=>true, 'bootstrap'=>true));
 
 
 require_once APP.DS. 'Config'. DS .'config.php';
