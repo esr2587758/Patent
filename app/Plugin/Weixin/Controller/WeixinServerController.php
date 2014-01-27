@@ -82,7 +82,7 @@ abstract class WeixinServerController extends WeixinAppController {
 			break;
 		}
 		
-		if ( $oResponse instanceof AbstractResponse ) {
+		if ( !$oResponse instanceof AbstractResponse ) {
 			// TODO 以后要做异常处理
 			return false;
 		}
