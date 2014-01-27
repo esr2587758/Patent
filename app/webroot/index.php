@@ -1,4 +1,17 @@
 <?php
+$_regCommand = '/(s|a)([\S]*)[\s]+(.*)/i';
+
+$command = 'sCLMS ce shi';
+
+preg_match($_regCommand, $command, $matches);
+
+var_dump($matches);
+list(, $type, $field, $val) = $matches;
+echo $type .' ';
+echo $field . ' ';
+echo $val . ' '; 
+exit();
+
 /**
  * Index
  *
